@@ -13,6 +13,9 @@ const PaymentReceived: React.FC<{ orderDetails: any }> = ({ orderDetails }) => {
 
 	return (
 		<div className="PaymentReceived">
+			<div className="container">
+				<img src="/mfs.svg" alt="My Icon" />
+			</div>
 			<h1>Payment received, thank you.</h1>
 			<h2>Order Details</h2>
 			<div>

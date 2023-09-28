@@ -1,13 +1,147 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+		"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+.container {
+	position: relative;
+	width: 10px; /* Make the container span the entire viewport width */
+	height: 20vh; /* Make the container span the entire viewport height */
+}
+
+.svg-container {
+	position: relative;
+	padding: 20px; /* Add padding to create some space around the SVG */
+	border-radius: 0px; /* Optional: Add rounded corners */
+}
+
+.svg-container::before {
+	content: ""; /* Add content for the pseudo-element */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 212.1vh; /* Cover the entire width of the .svg-container */
+	height: 100%; /* Cover the entire height of the .svg-container */
+	background-color: #00456b;
+	border-radius: inherit; /* Inherit the border-radius from the parent */
+}
+
+.blue-section {
+	position: relative;
+	padding: 20px;
+	border-radius: 0px;
+}
+
+.blue-section::before {
+	content: "";
+	position: absolute;
+	border-radius: inherit;
+	top: 0%;
+	left: 0%;
+	height: 350%;
+	background-color: #1167b1;
+	width: 212.1vh; /* Make the blue section span the entire width of the container */
+	/* Add any additional styles you want for the blue section here */
+}
+
+.squares {
+	background-image: linear-gradient(
+			45deg,
+			#dfe7fc 25%,
+			transparent 25%,
+			transparent 27%,
+			#dfe7fc 27%,
+			#dfe7fc 75%,
+			transparent 75%,
+			transparent 77%,
+			#dfe7fc 77%,
+			#dfe7fc
+		),
+		linear-gradient(
+			45deg,
+			#dfe7fc 25%,
+			transparent 25%,
+			transparent 27%,
+			#dfe7fc 27%,
+			#dfe7fc 75%,
+			transparent 75%,
+			transparent 77%,
+			#dfe7fc 77%,
+			#dfe7fc
+		);
+	background-size: 20px 20px;
+	width: 100%;
+	height: 100%;
+}
+
+.top-left-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* width: 20px; */
+	/* Add any additional styles you want for the image here */
+}
+
+.centered-h1 {
+	padding-top: 100px;
+	font-weight: normal;
+	display: flex; /* Use flexbox for vertical centering */
+	flex-direction: column; /* Stack elements vertically */
+	align-items: center; /* Center horizontally */
+	justify-content: center; /* Center vertically */
+}
+
+.centered-h2 {
+	padding-left: 20px;
+	font-weight: normal;
+	/* font-style: normal; */
+}
+
+.centered-h3 {
+	padding-left: 20px;
+}
+
+.my-p {
+	padding-left: 20px;
+}
+
+/* App.css */
+/* Style for left-details (Unit Amount) */
+.left-details {
+	text-align: left; /* Align text to the left */
+	margin-right: auto; /* Push to the left side */
+}
+
+.unit-amount {
+	font-weight: bold; /* Make the text bold */
+	/* Add any other styles you want for the Unit Amount */
+}
+
+.amount-label {
+	font-weight: bold;
+}
+
+/* Style for right-details (Quantity) */
+.right-details {
+	text-align: right; /* Align text to the right */
+	margin-left: auto; /* Push to the right side */
+}
+
+.quantity-label {
+	padding-right: 118px;
+	font-weight: bold; /* Remove bold font-weight */
+	/* Add any other styles you want for the Quantity label */
+}
+
+.quantity-input {
+	/* Add any styles you want for the Quantity input */
+}
+
+/* Rest of your styles for other elements */

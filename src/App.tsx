@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import PaymentReceived from "./PaymentReceived";
 
+// import the SVG file
+// import MyIcon from "../public/mfs.svg";
+
 function App() {
 	const [quantity, setQuantity] = useState<number>(0);
 	const unitAmount: number = 85000;
@@ -59,29 +62,56 @@ function App() {
 						path="/"
 						element={
 							<div>
-								<h1>Payment link</h1>
-								<h3>Link details</h3>
-								<h2>BYOB WORKSHOP</h2>
-								<p>
+								<div className="container">
+									<div className="svg-container">
+										<img
+											src="/mfs.svg"
+											alt="My Icon"
+											style={{ filter: "invert(100%)" }}
+											// className="top-left-image"
+										/>
+									</div>
+									<div className="blue-section">
+										{/* Add content or elements for the blue-colored section here */}
+										<div className="squares"></div>
+									</div>
+								</div>
+								<h1 className="centered-h1">Payment link</h1>
+								<h3 className="centered-h3">Link details</h3>
+								<h2 className="centered-h2">BYOB WORKSHOP</h2>
+								<p className="my-p">
 									"Career workshop '23-Unlocking your networking potential
 									masterclass, workshop and conference event..
 								</p>
+
+								<div className="right-details">
+									<div className="quantity-input-container">
+										<label htmlFor="quantity" className="quantity-label">
+											Quantity:
+										</label>
+										<div className="quantity-input-group">
+											<input
+												type="number"
+												id="quantity"
+												value={quantity}
+												onChange={(e) =>
+													handleQuantityChange(Number(e.target.value))
+												}
+												className="quantity-input"
+											/>
+										</div>
+									</div>
+								</div>
+
+								<div className="unit-amount">
+									<div className="left-details">
+										<p>Unit Amount {unitAmount} UGX</p>
+									</div>
+								</div>
 								<div>
-									<label htmlFor="quantity">Quantity:</label>
-									<input
-										type="number"
-										id="quantity"
-										value={quantity}
-										onChange={(e) =>
-											handleQuantityChange(Number(e.target.value))
-										}
-									/>
+									<p className="amount-label">Total Amount: {totalAmount} UGX</p>
 								</div>
 								{errorMessage && <div className="error">{errorMessage}</div>}
-								<div>
-									<p>Unit Amount: {unitAmount} UGX</p>
-									<p>Total Amount: {totalAmount} UGX</p>
-								</div>
 								<Link to={quantity <= threshold ? "/payment-received" : "#"}>
 									<button
 										onClick={handleProceedToPay}
