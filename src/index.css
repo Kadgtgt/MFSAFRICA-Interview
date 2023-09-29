@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	padding: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
 		"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -51,36 +52,6 @@ code {
 	/* Add any additional styles you want for the blue section here */
 }
 
-.squares {
-	background-image: linear-gradient(
-			45deg,
-			#dfe7fc 25%,
-			transparent 25%,
-			transparent 27%,
-			#dfe7fc 27%,
-			#dfe7fc 75%,
-			transparent 75%,
-			transparent 77%,
-			#dfe7fc 77%,
-			#dfe7fc
-		),
-		linear-gradient(
-			45deg,
-			#dfe7fc 25%,
-			transparent 25%,
-			transparent 27%,
-			#dfe7fc 27%,
-			#dfe7fc 75%,
-			transparent 75%,
-			transparent 77%,
-			#dfe7fc 77%,
-			#dfe7fc
-		);
-	background-size: 20px 20px;
-	width: 100%;
-	height: 100%;
-}
-
 .top-left-image {
 	position: absolute;
 	top: 0;
@@ -90,7 +61,7 @@ code {
 }
 
 .centered-h1 {
-	padding-top: 100px;
+	padding-top: 90px;
 	font-weight: normal;
 	display: flex; /* Use flexbox for vertical centering */
 	flex-direction: column; /* Stack elements vertically */
@@ -112,36 +83,70 @@ code {
 	padding-left: 20px;
 }
 
-/* App.css */
-/* Style for left-details (Unit Amount) */
-.left-details {
-	text-align: left; /* Align text to the left */
-	margin-right: auto; /* Push to the left side */
+.right-details {
+	display: flex;
+	padding-right: 20px;
+	padding-top: 18px;
 }
 
-.unit-amount {
-	font-weight: bold; /* Make the text bold */
-	/* Add any other styles you want for the Unit Amount */
+.blue-button {
+	background-color: #006fab; /* Set the background color to blue */
+	color: white; /* Set the text color to white */
+	gap: 10px;
+	/* margin: 40px; */
+	padding: 11px, 16px, 11px, 16px;
+	border-radius: 4px;
+	width: 304px;
+	height: 30px;
+}
+
+.red-button {
+	background-color: red; /* Set the background color to blue */
+	color: white; /* Set the text color to white */
+	gap: 10px;
+	margin: 45px 0;
+	padding: 11px, 16px, 11px, 16px;
+	border-radius: 4px;
+	width: 80%;
+}
+
+.details-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.left-details {
+	padding-left: 20px;
+}
+
+.quantity-input {
+	width: 100px; /* Adjust the width as needed */
+	height: 40px; /* Adjust the height as needed */
+	/* Add any other styles you want for the input box */
+}
+
+.quantity-label {
+	font-weight: bold;
 }
 
 .amount-label {
 	font-weight: bold;
+	padding-left: 20px;
 }
 
-/* Style for right-details (Quantity) */
-.right-details {
-	text-align: right; /* Align text to the right */
-	margin-left: auto; /* Push to the right side */
+.total-amount {
+	font-weight: bold;
+	padding-left: 20px;
 }
 
-.quantity-label {
-	padding-right: 118px;
-	font-weight: bold; /* Remove bold font-weight */
-	/* Add any other styles you want for the Quantity label */
+.unit-amount-label {
+	font-weight: bold;
 }
 
-.quantity-input {
-	/* Add any styles you want for the Quantity input */
+.centered-button {
+	display: block;
+	width: 306px;
+	margin: 0 auto; /* This centers the element horizontally */
+	text-align: center; /* This centers the button's text within the button */
+	text-decoration: none;
 }
-
-/* Rest of your styles for other elements */
