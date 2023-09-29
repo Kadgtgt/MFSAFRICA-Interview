@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "./index.css";
 
 const PaymentReceived: React.FC<{ orderDetails: any }> = ({ orderDetails }) => {
 	useEffect(() => {
@@ -12,13 +13,33 @@ const PaymentReceived: React.FC<{ orderDetails: any }> = ({ orderDetails }) => {
 	const { dateOfPurchase, unitAmount, quantity, description, amountPaid } = orderDetails;
 
 	return (
-		<div className="PaymentReceived">
-			<div className="container">
-				<img src="/mfs.svg" alt="My Icon" />
+		<div>
+			<div className="Container">
+				<div className="svg-container">
+					<img
+						src="/mfs.svg"
+						alt="My Icon"
+						className="PaymentReceived"
+						style={{ filter: "invert(100%)" }}
+					/>
+				</div>
+				<div className="blue-section">
+					{/* Add content or elements for the blue-colored section here */}
+					<div className="squares"></div>
+				</div>
 			</div>
-			<h1>Payment received, thank you.</h1>
-			<h2>Order Details</h2>
-			<div>
+			<h1 className="pr" style={{ display: "inline-block" }}>
+				<img
+					src="/check-circle.png"
+					alt="Check Circle"
+					className="check-circle"
+					style={{ marginRight: "10px", verticalAlign: "middle" }}
+				/>
+				Payment received, thank you.
+			</h1>
+
+			<h2 className="od">Order Details</h2>
+			<div className="pd">
 				<p>Date of Purchase: {dateOfPurchase}</p>
 				<p>Unit Amount: {unitAmount} UGX</p>
 				<p>Quantity: {quantity}</p>

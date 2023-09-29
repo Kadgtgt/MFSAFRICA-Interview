@@ -150,3 +150,32 @@ code {
 	text-align: center; /* This centers the button's text within the button */
 	text-decoration: none;
 }
+
+/* Target the text elements within the SVG and set their fill color to white */
+.PaymentReceived svg text {
+	fill: white;
+}
+
+.pr {
+	padding-top: 90px;
+	font-weight: bold;
+	display: flex; /* Use flexbox for vertical centering */
+	flex-direction: column; /* Stack elements vertically */
+	align-items: center; /* Center horizontally */
+	justify-content: center; /* Center vertically */
+}
+
+.od {
+	font-weight: normal;
+	padding-left: 20px;
+}
+
+.pd {
+	padding-left: 20px;
+	font-weight: bold;
+}
+
+.check-circle {
+	width: 37px;
+	height: 37px;
+}
