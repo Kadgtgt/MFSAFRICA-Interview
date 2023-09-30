@@ -11,27 +11,39 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+.data {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 700px;
+}
+
+.data2 {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 700px;
+}
+
 .container {
 	position: relative;
-	width: 10px; /* Make the container span the entire viewport width */
-	height: 20vh; /* Make the container span the entire viewport height */
+	width: 10px;
+	height: 20vh;
 }
 
 .svg-container {
 	position: relative;
-	padding: 20px; /* Add padding to create some space around the SVG */
-	border-radius: 0px; /* Optional: Add rounded corners */
+	padding: 20px;
+	border-radius: 0px;
 }
 
 .svg-container::before {
-	content: ""; /* Add content for the pseudo-element */
+	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 212.1vh; /* Cover the entire width of the .svg-container */
-	height: 100%; /* Cover the entire height of the .svg-container */
+	width: 212.1vh;
+	height: 100%;
 	background-color: #00456b;
-	border-radius: inherit; /* Inherit the border-radius from the parent */
+	border-radius: inherit;
 }
 
 .blue-section {
@@ -48,25 +60,22 @@ code {
 	left: 0%;
 	height: 350%;
 	background-color: #1167b1;
-	width: 212.1vh; /* Make the blue section span the entire width of the container */
-	/* Add any additional styles you want for the blue section here */
+	width: 212.1vh;
 }
 
 .top-left-image {
 	position: absolute;
 	top: 0;
 	left: 0;
-	/* width: 20px; */
-	/* Add any additional styles you want for the image here */
 }
 
 .centered-h1 {
 	padding-top: 90px;
 	font-weight: normal;
-	display: flex; /* Use flexbox for vertical centering */
-	flex-direction: column; /* Stack elements vertically */
-	align-items: center; /* Center horizontally */
-	justify-content: center; /* Center vertically */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .centered-h2 {
@@ -90,19 +99,22 @@ code {
 }
 
 .blue-button {
-	background-color: #006fab; /* Set the background color to blue */
-	color: white; /* Set the text color to white */
+	background-color: #006fab;
+	color: white;
 	gap: 10px;
-	/* margin: 40px; */
 	padding: 11px, 16px, 11px, 16px;
 	border-radius: 4px;
 	width: 304px;
 	height: 30px;
 }
 
+a {
+	text-decoration: none;
+}
+
 .red-button {
-	background-color: red; /* Set the background color to blue */
-	color: white; /* Set the text color to white */
+	background-color: red;
+	color: white;
 	gap: 10px;
 	margin: 45px 0;
 	padding: 11px, 16px, 11px, 16px;
@@ -120,9 +132,8 @@ code {
 }
 
 .quantity-input {
-	width: 100px; /* Adjust the width as needed */
-	height: 40px; /* Adjust the height as needed */
-	/* Add any other styles you want for the input box */
+	width: 100px;
+	height: 40px;
 }
 
 .quantity-label {
@@ -146,12 +157,11 @@ code {
 .centered-button {
 	display: block;
 	width: 306px;
-	margin: 0 auto; /* This centers the element horizontally */
-	text-align: center; /* This centers the button's text within the button */
+	margin: 0 auto;
+	text-align: center;
 	text-decoration: none;
 }
 
-/* Target the text elements within the SVG and set their fill color to white */
 .PaymentReceived svg text {
 	fill: white;
 }
@@ -159,10 +169,10 @@ code {
 .pr {
 	padding-top: 90px;
 	font-weight: bold;
-	display: flex; /* Use flexbox for vertical centering */
-	flex-direction: column; /* Stack elements vertically */
-	align-items: center; /* Center horizontally */
-	justify-content: center; /* Center vertically */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .od {
@@ -173,9 +183,13 @@ code {
 .pd {
 	padding-left: 20px;
 	font-weight: bold;
+	grid-column: 20px;
 }
 
 .check-circle {
 	width: 37px;
 	height: 37px;
+}
+
+@media screen {
 }

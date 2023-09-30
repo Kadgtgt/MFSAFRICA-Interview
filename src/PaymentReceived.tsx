@@ -1,15 +1,6 @@
-import React, { useEffect } from "react";
 import "./index.css";
 
 const PaymentReceived: React.FC<{ orderDetails: any }> = ({ orderDetails }) => {
-	useEffect(() => {
-		// Check if orderDetails is available and display the alert
-		if (orderDetails) {
-			// alert("Payment received, thank you.");
-		}
-	}, [orderDetails]);
-
-	// Rest of your component code
 	const { dateOfPurchase, unitAmount, quantity, description, amountPaid } = orderDetails;
 
 	return (
@@ -24,27 +15,28 @@ const PaymentReceived: React.FC<{ orderDetails: any }> = ({ orderDetails }) => {
 					/>
 				</div>
 				<div className="blue-section">
-					{/* Add content or elements for the blue-colored section here */}
 					<div className="squares"></div>
 				</div>
 			</div>
-			<h1 className="pr" style={{ display: "inline-block" }}>
-				<img
-					src="/check-circle.png"
-					alt="Check Circle"
-					className="check-circle"
-					style={{ marginRight: "10px", verticalAlign: "middle" }}
-				/>
-				Payment received, thank you.
-			</h1>
+			<div className="data2">
+				<h1 className="pr" style={{ display: "inline-block" }}>
+					<img
+						src="/check-circle.png"
+						alt="Check Circle"
+						className="check-circle"
+						style={{ marginRight: "10px", verticalAlign: "middle" }}
+					/>
+					Payment received, thank you.
+				</h1>
 
-			<h2 className="od">Order Details</h2>
-			<div className="pd">
-				<p>Date of Purchase: {dateOfPurchase}</p>
-				<p>Unit Amount: {unitAmount} UGX</p>
-				<p>Quantity: {quantity}</p>
-				<p>Description: {description}</p>
-				<p>Amount Paid: {amountPaid} UGX</p>
+				<h2 className="od">Order Details</h2>
+				<div className="pd">
+					<p>Date of Purchase: {dateOfPurchase}</p>
+					<p>Unit Amount: {unitAmount} UGX</p>
+					<p>Quantity: {quantity}</p>
+					<p>Description: {description}</p>
+					<p>Amount Paid: {amountPaid} UGX</p>
+				</div>
 			</div>
 		</div>
 	);

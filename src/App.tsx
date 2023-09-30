@@ -2,22 +2,18 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import PaymentReceived from "./PaymentReceived";
 
-// import the SVG file
-// import MyIcon from "../public/mfs.svg";
-
 function App() {
 	const [quantity, setQuantity] = useState<number>(0);
 	const unitAmount: number = 85000;
 	const [errorMessage, setErrorMessage] = useState<string | null>(null);
 	const [orderDetails, setOrderDetails] = useState<any | null>(null);
-	const threshold = 20; // Threshold value
+	const threshold = 20;
 
 	// Calculate the total amount based on the quantity and unit amount
 	const totalAmount: number = unitAmount * quantity;
-	// setIsGreater(quantity > 20);
 
 	const handleQuantityChange = (value: number) => {
-		// Make sure the value is within the range (1 to 100 in this example)
+		// Make sure the value is within the range (1 to 100)
 		if (value >= 1 && value <= 100) {
 			setQuantity(value);
 			// Check if the value is greater than 20
@@ -68,66 +64,71 @@ function App() {
 											src="/mfs.svg"
 											alt="My Icon"
 											style={{ filter: "invert(100%)" }}
-											// className="top-left-image"
 										/>
 									</div>
 									<div className="blue-section">
-										{/* Add content or elements for the blue-colored section here */}
 										<div className="squares"></div>
 									</div>
 								</div>
-								<h1 className="centered-h1">Payment link</h1>
-								<h3 className="centered-h3">Link details</h3>
-								<h2 className="centered-h2">BYOB WORKSHOP</h2>
-								<p className="my-p">
-									"Career workshop '23-Unlocking your networking potential
-									masterclass, workshop and conference event..
-								</p>
+								<div className="data">
+									<h1 className="centered-h1">Payment link</h1>
+									<h3 className="centered-h3">Link details</h3>
+									<h2 className="centered-h2">BYOB WORKSHOP</h2>
+									<p className="my-p">
+										"Career workshop '23-Unlocking your networking potential
+										masterclass, workshop and conference event..
+									</p>
 
-								<div className="details-container">
-									<div className="left-details">
-										<p className="unit-amount-label">Unit Amount</p>
-										<p className="unit-amount-value">{unitAmount} UGX</p>
-									</div>
+									<div className="details-container">
+										<div className="left-details">
+											<p className="unit-amount-label">Unit Amount</p>
+											<p className="unit-amount-value">{unitAmount} UGX</p>
+										</div>
 
-									<div className="right-details">
-										<div className="quantity-input-container">
-											<label htmlFor="quantity" className="quantity-label">
-												Quantity
-											</label>
-											<div className="quantity-input-group">
-												<input
-													type="number"
-													id="quantity"
-													value={quantity}
-													onChange={(e) =>
-														handleQuantityChange(Number(e.target.value))
-													}
-													className="quantity-input"
-												/>
+										<div className="right-details">
+											<div className="quantity-input-container">
+												<label
+													htmlFor="quantity"
+													className="quantity-label"
+												>
+													Quantity
+												</label>
+												<div className="quantity-input-group">
+													<input
+														type="number"
+														id="quantity"
+														value={quantity}
+														onChange={(e) =>
+															handleQuantityChange(
+																Number(e.target.value)
+															)
+														}
+														className="quantity-input"
+													/>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
 
-								<div>
-									<p className="amount-label">Total Amount</p>
-									<p className="total-amount">{totalAmount} UGX</p>
+									<div>
+										<p className="amount-label">Total Amount</p>
+										<p className="total-amount">{totalAmount} UGX</p>
+									</div>
+									{errorMessage && <div className="error">{errorMessage}</div>}
+									<Link to={quantity <= threshold ? "/payment-received" : "#"}>
+										<button
+											onClick={handleProceedToPay}
+											disabled={quantity > threshold}
+											className={
+												quantity > threshold
+													? "red-button centered-button"
+													: "blue-button centered-button"
+											}
+										>
+											Proceed to pay
+										</button>
+									</Link>
 								</div>
-								{errorMessage && <div className="error">{errorMessage}</div>}
-								<Link to={quantity <= threshold ? "/payment-received" : "#"}>
-									<button
-										onClick={handleProceedToPay}
-										disabled={quantity > threshold}
-										className={
-											quantity > threshold
-												? "red-button centered-button"
-												: "blue-button centered-button"
-										}
-									>
-										Proceed to pay
-									</button>
-								</Link>
 							</div>
 						}
 					/>
