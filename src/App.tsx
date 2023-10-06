@@ -1,8 +1,10 @@
+// import statements
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import PaymentReceived from "./PaymentReceived";
 
 function App() {
+	// state management
 	const [quantity, setQuantity] = useState<number>(0);
 	const unitAmount: number = 85000;
 	const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -18,6 +20,7 @@ function App() {
 			setQuantity(value);
 			// Check if the value is greater than 20
 			if (value > 20) {
+				//if the value is greater than 20 throw the error
 				setErrorMessage(
 					"This user is unable to receive this amount. Contact them for further assistance."
 				);
@@ -26,7 +29,7 @@ function App() {
 				setErrorMessage(null);
 			}
 		} else {
-			// Set the error message if the value is outside the desired range
+			// Set the error message if the value is outside the desired range thats below 1
 			setErrorMessage("Invalid quantity. Please enter a valid quantity.");
 		}
 	};
